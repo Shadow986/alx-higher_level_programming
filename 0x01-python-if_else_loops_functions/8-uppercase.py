@@ -1,8 +1,16 @@
 #!/usr/bin/python3
-def uppercase(string):
-    for char in string:
-        uppercase_char = chr(ord(char) - 32) if 'a' <= char <= 'z' else char
-        print(uppercase_char, end="")
-    ::w
+
+def to_upper(character):
+    if ord(character) >= 97 and ord(character) <= 122:
+        return chr(ord(character) - 32)
+    else:
+        return character
+
 def uppercase(string):
     string_new = ""
+    for char in string:
+        string_new += to_upper(char)
+    print(string_new)
+
+# Example usage
+uppercase("Hello, World!")
