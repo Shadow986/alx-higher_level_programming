@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print(''.join([chr(i) for i in range(65, 91)]))
+print(str(bytes(list(range(0x41, 0x5B))))[2:28])
