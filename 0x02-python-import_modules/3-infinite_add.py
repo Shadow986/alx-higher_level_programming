@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import sys
 
+
 def main():
     # Initialize sum to 0
     sum = 0
@@ -13,6 +14,8 @@ def main():
     # Print the sum followed by a new line
     print(sum)
 
+
 # Ensure the code is not executed when imported
+
 if __name__ == "__main__":
     main()
