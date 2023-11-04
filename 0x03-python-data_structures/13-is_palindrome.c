@@ -62,36 +62,3 @@ ListNode *createNode(int val)
 	newNode->next = NULL;
 	return (newNode);
 }
-
-/**
- * main - entry point
- * Return: 0 on success
- */
-int main()
-{
-	ListNode *head = createNode(1);
-	head->next = createNode(2);
-	head->next->next = createNode(3);
-	head->next->next->next = createNode(2);
-	head->next->next->next->next = createNode(1);
-
-	int result = is_palindrome(&head);
-	if (result)
-	{
-		printf("The linked list is a palindrome.\n");
-	}
-	else
-	{
-		printf("The linked list is not a palindrome.\n");
-	}
-
-	ListNode *current = head;
-	while (current != NULL)
-	{
-		ListNode *temp = current;
-		current = current->next;
-		free(temp);
-	}
-
-	return (0);
-}
