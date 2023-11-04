@@ -1,64 +1,36 @@
 #include "lists.h"
-#include <stdio.h>
-#include <stdlib.h>
+#include <stddef.h>
 
 /**
- * struct ListNode - a node of a singly linked list
- * @val: integer value in the node
- * @next: pointer to the next node
+ * pal -  a function in that checks if a singly linked list is a palindrome.
+ * @start: start position of list
+ * @end: end position of list
+ * Return: 1 if list is a palindrome, 0 otherwise
  */
-typedef struct ListNode {
-    int val;
-    struct ListNode *next;
-} ListNode;
-
-/**
- * is_palindrome - a function that checks if a singly
- * linked list is a palindrome
- * @head: double pointer to the head of the linked list
- * Return: 1 if the linked list is a palindrome, otherwise 0
- */
-int is_palindrome(ListNode **head)
+int pal(listint_t **start, listint_t *end)
 {
-	if (*head == NULL || (*head)->next == NULL)
+	if (end == NULL)
 		return (1);
 
-	ListNode *slow = *head;
-	ListNode *fast = *head;
-	ListNode *prev = NULL;
-
-	while (fast != NULL && fast->next != NULL)
+	if (pal(start, end->next) == 1 && (*start)->n == end->n)
 	{
-		fast = fast->next->next;
-		ListNode *next = slow->next;
-		slow->next = prev;
-		prev = slow;
-		slow = next;
+		*start = (*start)->next;
+		return (1);
 	}
 
-	if (fast != NULL)
-		slow = slow->next;
-
-	while (slow != NULL)
-	{
-		if (prev->val != slow->val)
-			return (0);
-		prev = prev->next;
-		slow = slow->next;
-	}
-
-	return 1;
+	return (0);
 }
 
 /**
- * createNode - a fubction that creates a new node of a singly linked list
- * @val: integer value to put in the new node
- * Return: pointer to the new node
+ * is_palindrome - a function that checks
+ * if a singly linked list is a palindrome
+ * @head: list to check
+ * Return: 1 if list is a palindrome, 0 otherwise
  */
-ListNode *createNode(int val)
+int is_palindrome(listint_t **head)
 {
-	ListNode *newNode = (ListNode *)malloc(sizeof(ListNode));
-	newNode->val = val;
-	newNode->next = NULL;
-	return (newNode);
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
+		return (1);
+
+	return (pal(head, *head));
 }
