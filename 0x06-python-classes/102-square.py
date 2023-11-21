@@ -56,7 +56,8 @@ class Square:
         """
         This is a special method for the Square class.
 
-        The __eq__ method checks if the square area is equal to the other square area.
+        The __eq__ method checks if the square area
+        is equal to the other square area.
         """
         if not isinstance(other, Square):
             return NotImplemented
@@ -66,7 +67,8 @@ class Square:
         """
         This is a special method for the Square class.
 
-        The __ne__ method checks if the square area is not equal to the other square area.
+        The __ne__ method checks if the square area
+        is not equal to the other square area.
         """
         if not isinstance(other, Square):
             return NotImplemented
@@ -76,7 +78,8 @@ class Square:
         """
         This is a special method for the Square class.
 
-        The __lt__ method checks if the square area is less than the other square area.
+        The __lt__ method checks if the square area
+        is less than the other square area.
         """
         if not isinstance(other, Square):
             return NotImplemented
@@ -86,7 +89,8 @@ class Square:
         """
         This is a special method for the Square class.
 
-        The __le__ method checks if the square area is less than or equal to the other square area.
+        The __le__ method checks if the square area
+        is less than or equal to the other square area.
         """
         if not isinstance(other, Square):
             return NotImplemented
@@ -96,7 +100,8 @@ class Square:
         """
         This is a special method for the Square class.
 
-        The __gt__ method checks if the square area is greater than the other square area.
+        The __gt__ method checks if the square area
+        is greater than the other square area.
         """
         if not isinstance(other, Square):
             return NotImplemented
@@ -106,7 +111,8 @@ class Square:
         """
         This is a special method for the Square class.
 
-        The __ge__ method checks if the square area is greater than or equal to the other square area.
+        The __ge__ method checks if the square area is
+        greater than or equal to the other square area.
         """
         if not isinstance(other, Square):
             return NotImplemented
