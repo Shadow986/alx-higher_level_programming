@@ -84,7 +84,8 @@ class SinglyLinkedList:
         """
         This is a public instance method for the SinglyLinkedList class.
 
-        The sorted_insert method inserts a new Node into the correct sorted position in the list.
+        The sorted_insert method inserts a new Node
+        into the correct sorted position in the list.
         """
         new_node = Node(value)
         if self.__head is None:
@@ -103,7 +104,8 @@ class SinglyLinkedList:
         """
         This is a special method for the SinglyLinkedList class.
 
-        The __str__ method returns a string representation of the singly linked list.
+        The __str__ method returns a string
+        representation of the singly linked list.
         """
         node = self.__head
         values = []
