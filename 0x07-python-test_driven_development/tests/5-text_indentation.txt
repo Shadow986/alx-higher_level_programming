@@ -1,0 +1,25 @@
+# Test 1
+Input: "Hello, world! How are you? I am fine: thank you."
+Expected Output: 
+"Hello, world!
+
+How are you?
+
+I am fine:
+
+thank you."
+
+# Test 2
+Input: "This is a test. This is only a test: Do you understand? Good."
+Expected Output: 
+"This is a test.
+
+This is only a test:
+
+Do you understand?
+
+Good."
+
+# Test 3
+Input: "No special characters in this string"
+Expected Output: "No special characters in this string"
