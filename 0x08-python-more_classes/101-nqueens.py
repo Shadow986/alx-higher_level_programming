@@ -3,6 +3,7 @@
 
 import sys
 
+
 def is_safe(board, row, col, n):
     """This function checks if a queen can be placed on board[row][col]."""
     # Check the row on the left
@@ -26,6 +27,7 @@ def is_safe(board, row, col, n):
         i += 1
         j -= 1
     return True
+
 
 def solve_nq(board, col, n, solutions):
     """This function solves the N queens problem using backtracking."""
@@ -53,6 +55,7 @@ def solve_nq(board, col, n, solutions):
     # If the queen can not be placed in any row in this column, return false
     return res
 
+
 def main():
     """This is the main function of the program."""
     # Check the number of arguments
@@ -78,6 +81,7 @@ def main():
     # Print the solutions
     for solution in solutions:
         print(solution)
+
 
 if __name__ == "__main__":
     main()
