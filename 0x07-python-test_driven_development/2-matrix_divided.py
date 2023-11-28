@@ -3,6 +3,7 @@
 This module contains a function that divides all elements of a matrix.
 """
 
+
 def matrix_divided(matrix, div):
     """
     Function to divide all elements of a matrix.
@@ -14,7 +15,8 @@ def matrix_divided(matrix, div):
     Returns:
     list of lists of int/float: The resulting matrix after division.
     """
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix) or not all(isinstance(item, (int, float)) for row in matrix for item in row):
+    if not isinstance(matrix, list) or not all(isinstance(row, list)
+                                               for row in matrix) or not all(isinstance(item, (int, float)) for row in matrix for item in row):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     if not all(len(row) == len(matrix[0]) for row in matrix):
