@@ -1,27 +1,36 @@
 #!/usr/bin/python3
-"""
-This module defines a function that inserts a line of text to a file,
-after each line containing a specific string.
+"""A function that inserts a line or text into a file after each line
+containing a specific string.....
 """
 
 
 def append_after(filename="", search_string="", new_string=""):
     """
-    Inserts a line of text to a file, after each line containing a specific string.
-
-    Args:
-        filename (str): the name of the file to be modified.
-        search_string (str): the string to be searched in each line.
-        new_string (str): the string to be inserted after the search string.
-
-    Returns:
-        None
+    # Write a function that inserts a line of text to a file, after each
+    # ...line containing a specific string (see example):
+    # VARIABLE(" "):
+    # Append After(filename,search,string): Search and update
+    # Return: Always 0. (Success)
     """
-    with open(filename, "r+", encoding="utf-8") as f:
-        lines = f.readlines()
-        f.seek(0)
-        f.truncate()
+    """
+    This function 'append_after' takes three parameters: 'filename'(the name
+    of the file), 'search_string' (the string to search for in each line)..
+    and 'new_string'(the line of text to insert after each line containing..
+    ...the search string.
+    """
+    with open(filename, 'r+') as file:
+        lines = file.readlines()
+        """We read all the lines from the file using the 'readlines' method
+        and store them in the 'lines' list.
+        We also iterate over each line in the 'lines' list"""
+        file.seek(0)
+        """Using the 'seek' method with the offset parameter set to '0'"""
         for line in lines:
-            f.write(line)
+            file.write(line)
             if search_string in line:
-                f.write(new_string + "\n")
+                file.write(new_string)
+        file.truncate()
+        """After iterating over all the lines, we use the 'truncate' method
+        to remove any remaining content from the file beyond
+        the current position.
+        The line is automatically closed when the 'with' block is exited"""
