@@ -21,7 +21,8 @@ class Student:
         """Retrieve a dictionary representation of a Student instance
 
         Args:
-            attrs (list of str, optional): A list of attribute names to retrieve. Defaults to None.
+            attrs (list of str, optional):
+            A list of attribute names to retrieve. Defaults to None.
 
         Returns:
             dict: A dictionary containing the attributes of the student
@@ -29,4 +30,5 @@ class Student:
         if attrs is None or not all(isinstance(attr, str) for attr in attrs):
             return self.__dict__
         else:
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+            return {attr: getattr(self, attr)
+                    for attr in attrs if hasattr(self, attr)}
