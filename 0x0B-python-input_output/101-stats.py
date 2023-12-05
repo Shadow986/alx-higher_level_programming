@@ -8,6 +8,7 @@ line_count = 0
 
 # Define a function to print the statistics
 
+
 def print_stats():
     global total_size, status_codes
     print("File size: {}".format(total_size))
@@ -16,6 +17,7 @@ def print_stats():
             print("{}: {}".format(code, count))
 
 # Loop through the lines of stdin
+
 
 try:
     for line in sys.stdin:
