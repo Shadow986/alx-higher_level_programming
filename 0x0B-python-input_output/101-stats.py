@@ -7,6 +7,7 @@ status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 line_count = 0
 
 # Define a function to print the statistics
+
 def print_stats():
     global total_size, status_codes
     print("File size: {}".format(total_size))
@@ -15,6 +16,7 @@ def print_stats():
             print("{}: {}".format(code, count))
 
 # Loop through the lines of stdin
+
 try:
     for line in sys.stdin:
         # Split the line by spaces
