@@ -4,15 +4,6 @@
 """
 from .rectangle import Rectangle
 
-'''
-File_Name: square.py
-Created Date: 19th of June, 2023
-Authur: David James Taiye (Official0mega)
-Size: Undefined
-Project Title: 0x0C-python-almost_a_circle
-Status: Submitted.
-'''
-
 
 class Square(Rectangle):
     """
