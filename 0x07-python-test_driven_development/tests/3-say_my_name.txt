@@ -1,0 +1,16 @@
+def test_say_my_name():
+    assert say_my_name("John", "Doe") == "My name is John Doe"
+    assert say_my_name("Jane") == "My name is Jane "
+    
+    try:
+        say_my_name(123, "Doe")
+    except TypeError as e:
+        assert str(e) == "first_name must be a string"
+
+    try:
+        say_my_name("John", 123)
+    except TypeError as e:
+        assert str(e) == "last_name must be a string"
+
+if __name__ == "__main__":
+    test_say_my_name()
