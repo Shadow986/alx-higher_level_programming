@@ -13,4 +13,3 @@ if (numArgs === 0)
 	{
 		console.log("Arguments found");
 	}
-}
