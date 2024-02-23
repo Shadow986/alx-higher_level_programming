@@ -1,26 +1,24 @@
 #!/usr/bin/python3
-"""Module that retrieves and prints the first state\
-        from a MySQL database using SQLAlchemy."""
-import sys
-from sqlalchemy import create_engine
+"""script to list all state objects using sqlalchemy
+"""
+from model_state import Base, State
+
 from sqlalchemy.orm import sessionmaker
-from model_state import State
 
-if __name__ == "__main__":
-    # Create the SQLAlchemy engine using the provided MySQL credentials
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-                           pool_pre_ping=True)
+from sqlalchemy import (create_engine)
 
-    # Create a session factory
+import sys
+
+
+if __name__ == '__main__':
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+    # create custom session object class from database engine
     Session = sessionmaker(bind=engine)
-
-    # Create a session object
+    # create instance of new custom session class
     session = Session()
-
-    # Retrieve the first state from the database and print its ID and name
     state = session.query(State).order_by(State.id).first()
-    if state is None:
-        print("Nothing")
+    if (state is not None):
+        print('{}: {}'.format(state.id, state.name))
     else:
-        print("{}: {}".format(state.id, state.name))
+        print('Nothing')
