@@ -4,11 +4,9 @@ Sends a request to a given URL and displays the body of the response (decoded in
 Handles urllib.error.HTTPError exceptions and prints the error code.
 """
 
-
 import urllib.request
 import urllib.error
 import sys
-
 
 if __name__ == "__main__":
     url = sys.argv[1]
